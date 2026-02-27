@@ -1,0 +1,15 @@
+{
+  "data": {
+    "sid": "ANONYMIZED_ID",
+    "create_date": "2023-04-20",
+    "capacity": "1.62",
+    "type": 1,
+    "timezone": "Europe/Paris",
+    "ecu": [
+      "ANONYMIZED_ID"
+    ],
+    "light": 1,
+    "authorization_code": "2c9f934a8f2ea266018f2f407a1d6fdc"
+  },
+  "code": 0
+}

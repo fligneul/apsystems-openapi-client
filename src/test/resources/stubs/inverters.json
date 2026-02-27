@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "eid": "ANONYMIZED_ID",
+      "type": 0,
+      "timezone": "Europe/Paris",
+      "inverter": [
+        {
+          "uid": "ANONYMIZED_ID",
+          "type": "DS3"
+        },
+        {
+          "uid": "ANONYMIZED_ID",
+          "type": "DS3"
+        }
+      ]
+    }
+  ],
+  "code": 0
+}

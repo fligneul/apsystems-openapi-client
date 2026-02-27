@@ -1,0 +1,46 @@
+name: Java CI with Gradle
+
+on:
+  push:
+    branches: [ "main", "master" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ '17', '21' ]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK ${{ matrix.java }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ matrix.java }}
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+
+    - name: Build and Test with Gradle
+      run: ./gradlew build
+
+  publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger JitPack Build
+        run: |
+          # Pings JitPack to start building the new tag immediately
+          REPO_PATH=$(echo "${{ github.repository }}" | sed 's/\//:/g')
+          curl -s https://jitpack.io/api/builds/com.github.${{ github.repository }}/${{ github.ref_name }} > /dev/null
+          echo "JitPack build triggered for ${{ github.ref_name }}"
