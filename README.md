@@ -1,6 +1,13 @@
 # APsystems OpenAPI Java SDK
 
-A lightweight, Retrofit-based Java library for interacting with the APsystems OpenAPI. This SDK provides easy access to solar system details, inverter data, energy summaries, and storage metrics.
+[![Release](https://img.shields.io/github/v/release/fligneul/apsystems-openapi-client)](https://github.com/fligneul/apsystems-openapi-client/releases)
+[![JitPack](https://jitpack.io/v/fligneul/apsystems-openapi-client.svg)](https://jitpack.io/#fligneul/apsystems-openapi-client)
+[![Build Status](https://github.com/fligneul/apsystems-openapi-client/actions/workflows/ci.yml/badge.svg)](https://github.com/fligneul/apsystems-openapi-client/actions)
+[![License](https://img.shields.io/github/license/fligneul/apsystems-openapi-client)](LICENSE)
+![Java Version](https://img.shields.io/badge/Java-11%2B-blue)
+
+A lightweight, Retrofit-based Java library for interacting with the APsystems OpenAPI.
+ This SDK provides easy access to solar system details, inverter data, energy summaries, and storage metrics.
 
 ## Features
 
